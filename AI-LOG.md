@@ -1,27 +1,27 @@
 # AI-LOG.md — CSC13008 IA#1: cartTotal
 
-> This log was reconstructed after some implementation work had already been completed. It is a retrospective account based on my available notes and conversation history, not a claim that I recorded every task in real time.
+> This log was reconstructed on 2026-10-12 from available prompts, notes, and conversation history after implementation work had already been completed. It is retrospective, not a claim that every task was recorded in real time. Where I cannot reliably identify a specific rejected suggestion, I say so rather than inventing one.
 
-## 2026-10-12 — Implementing `cartTotal` and tests
-Tool: Claude Web.
-Asked for: Help implementing `cartTotal(items, options)` and creating tests based on the assignment specification in the starter repository.
-Kept: The implementation structure for validating negative prices and invalid quantities, returning `0` for an empty cart, calculating subtotal/VAT/shipping, and rounding the final total; I also kept tests for the worked example and edge cases.
-Changed: I copied the suggested implementation and tests into the local project files. I then ran the project's test command and continued reviewing the files against the assignment requirements.
-Rejected: My available notes do not reliably identify a specific Claude-generated suggestion that I rejected, so I am not inventing one.
-By hand: I transferred the code into the local project, ran the local commands, and checked the results. I cannot claim that I independently wrote the core implementation or the test cases from scratch.
+## 2026-10-10 — Reviewing the specification, implementing `cartTotal`, and adding tests
+Tool: Claude Web (claude.ai web chat).
+Asked for: First review the project instructions and report the required behavior, missing tests, files to change, and lint/CI status without editing; then help implement `cartTotal(items, options)` and add tests based on the assignment specification.
+Kept: The specification-based approach for subtotal, VAT, shipping threshold, rounding, empty-cart behavior, and required `RangeError` cases. The resulting test suite preserves the worked-example test and covers the main edge cases.
+Changed: I mainly copied and applied the AI-generated implementation and tests to the local repository rather than writing the core code from scratch. I ran the project tests and checked the results.
+Rejected: I instructed the assistant not to invent validation rules, alter the specification, add unnecessary dependencies, or modify unrelated files. My available history does not reliably identify a particular generated code suggestion that I separately discarded.
+By hand: I copied/applied the suggested code and tests, ran `npm test`, and reviewed the output. I cannot claim that I independently authored the implementation or test cases from scratch.
 
-## 2026-10-12 — Project brief, rules, lint and CI setup
+## 2026-10-11 — Reviewing the rubric and setting up the harness
+Tool: Claude Web and ChatGPT.
+Asked for: Help compare the project with the IA#1 rubric, plan the smallest reasonable harness changes, configure ESLint and GitHub Actions, update project rules, and prepare the submission documents.
+Kept: The ESLint-only choice (without Prettier), the `npm run lint` and `npm test` checks, and a push-triggered workflow that installs dependencies and runs lint and tests.
+Changed: I mainly copied/applied AI-generated configuration and documentation to the local repository. ChatGPT also helped edit Markdown documents and explain Git errors. The exact authorship of every individual configuration line cannot be reliably separated from the available history.
+Rejected: I chose not to add Prettier. I also required the assistants not to claim tests or CI passed without evidence, not to invent instructor templates, and not to make unsupported claims in the self-assessment. I do not have a reliable item-by-item list of other suggestions I rejected.
+By hand: I applied the suggested files, ran `npm ci`, `npm run lint`, and `npm test`, checked that the test suite passed all 15 tests, and pushed the project to GitHub. Most implementation and documentation content was AI-assisted.
+
+## 2026-10-12 — Final review and submission documents
 Tool: ChatGPT.
-Asked for: Help drafting the project brief and agent rules, configuring ESLint and npm scripts, adding a GitHub Actions workflow, and reviewing the submission documents.
-Kept: The project-specific rules, the `npm test` and `npm run lint` gate, and a workflow intended to run installation, lint and tests on push.
-Changed: I transferred the suggested text/configuration into the project and reviewed the resulting files. I am treating the GitHub Actions result as unverified until I check an actual run in the submitted repository.
-Rejected: I have not recorded a reliable item-by-item list of rejected suggestions from the earlier work; I will not invent one retrospectively.
-By hand: I copied and organized the files in the local project, ran commands, and used the observed results to decide what still needed checking. The implementation and most of the project-document drafts were AI-assisted.
-
-## 2026-10-12 — Final review before submission
-Tool: ChatGPT.
-Asked for: Review the uploaded code, tests, rubric, and project documents for inconsistencies before submission.
-Kept: The review identified that this file was still the course template and that the self-assessment incorrectly described it as a completed usage log.
-Changed: Replaced the template-only content with this retrospective account and marked the retrospective nature of the log explicitly.
-Rejected: Claims that CI had passed without evidence from a real GitHub Actions run.
-By hand: I reviewed the updated documents and must still verify the final repository state, push the files, and check the actual CI result.
+Asked for: Combine the existing AI log with the actual usage history and prepare a self-assessment that follows the rubric without inventing evidence.
+Kept: The retrospective disclosure, the distinction between AI-generated work and my own verification steps, and evidence tied to the files, test results, and submitted commit.
+Changed: I revised the previous draft to reflect that I mainly copied/applied AI output and ran checks, rather than claiming independent authorship of the core code.
+Rejected: I did not retain claims that I wrote the core implementation and tests from scratch, and I did not list any specific rejected code suggestion that the available history could not substantiate.
+By hand: I reviewed the final documents, checked the local commands' results, and confirmed that the submitted commit had a green GitHub Actions check. The log itself was reconstructed after the work, which is a limitation of this record.
