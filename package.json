@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "lint": "node ./node_modules/eslint/bin/eslint.js ."
+  },
+  "devDependencies": {
+    "eslint": "^10.12.0"
   }
 }
